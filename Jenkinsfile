@@ -30,7 +30,7 @@ pipeline {
             steps {
                 echo 'Deploying in kubectl !!!'
 		sh("sed -i.bak 's#paulbouwer/hello-kubernetes:1.8#${imgtag}#' ./yaml/hello-kubernetes.custom-message.yaml")
-		sh("kubectl apply /var/jenkins_home/config -n appadmin -f ./yaml/hello-kubernetes.custom-message.yaml ")		
+		sh("kubectl apply --kubeconfig=/var/jenkins_home/config -n appadmin -f ./yaml/hello-kubernetes.custom-message.yaml ")		
             }
         }
     }
