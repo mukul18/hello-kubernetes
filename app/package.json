@@ -1,7 +1,7 @@
 {
   "name": "hello-kubernetes",
   "version": "1.8.0",
-  "description": "Hello Kubernetes!",
+  "description": "Hello Ezmeral!",
   "author": "Paul Bouwer",
   "license": "MIT",
   "main": "server.js",
