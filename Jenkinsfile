@@ -11,14 +11,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-		script {
-                  docker.build imgtag
-		}
+		sh("docker -H 10.3.20.117:5555 build --build-arg http_proxy=http://web-proxy.corp.hpecorp.net:8080 --build-arg https_proxy=http://web-proxy.corp.hpecorp.net:8080 -t ${imgtag} .")
             }
+        }
         }
 	stage('Test') {
            steps {
-               echo 'Testing RSVP'
+               echo 'Testing hello world'
             }
 	}
 	stage('Push') {
