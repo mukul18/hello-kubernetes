@@ -22,8 +22,8 @@ pipeline {
 	stage('Push') {
            steps {
                echo 'Pushing Image to Docker hub'
-	       sh("docker -H :5555 login -u hemantkbajaj -p hunny2744")
-	       sh("docker -H :5555 push ${imgtag}")	       
+	       sh("docker -H 10.3.20.117:5555 login -u hemantkbajaj -p hunny2744")
+	       sh("docker -H 10.3.20.117:5555 push ${imgtag}")	       
             }
         }
         stage('Deploy') {
